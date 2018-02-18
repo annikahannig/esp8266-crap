@@ -5,7 +5,6 @@ UDP server
 
 import time
 import socket
-import argparse
 
 import config
 
@@ -25,4 +24,7 @@ def _open_socket(port):
     s.bind(("0.0.0.0", port))
 
     return s
+
+
+
 

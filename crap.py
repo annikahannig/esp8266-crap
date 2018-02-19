@@ -38,6 +38,9 @@ def receive(port):
 
     while True:
         frame = _recv_frame(sock)
+        if len(frame) < config.MAX_LEDS*3:
+            print("received framelength {}".format(len(frame)))
+            continue
 
         # Update ws2812
         for i in range(0, config.MAX_LEDS):
